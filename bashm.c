@@ -9,7 +9,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 Additional permission under GNU GPL version 3 section 7
 
-If you modify this Program, or any covered work, by linking or combining it with basem, containing parts covered by the terms of GNU GPL version 3, the licensors of this Program grant you additional permission to convey the resulting work. 
+If you modify this Program, or any covered work, by linking or combining it with bashm, containing parts covered by the terms of GNU GPL version 3, the licensors of this Program grant you additional permission to convey the resulting work. 
 ----
 author: florian mayer
   date: 08.02.2014
