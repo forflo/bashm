@@ -17,7 +17,7 @@ author: florian mayer
   a very simple CLI described in the function usage(). SHM segments can be created, destroyed, read and
   written through statements such as --get, --destroy, --set or --create. The single segments are referenced
   via the Sys-V IPC key. As a consequence, independent bash processes will be able to use something like
-  global variables much more flexible than e.g. fifos and much nicer than temporary files */
+  global variables that are much more flexible than e.g. fifos and much nicer than temporary files */
 
 #include <stdio.h>
 #include <string.h>
@@ -95,13 +95,13 @@ void usage(){
     [ -p | --permissions ] \n\
     [ -k | --key <KEY> ] //The key for the Shared Memory segment \n\
     [ -l | --length <size in bytes> ] //Size of the shm. Needs to be specified if -c is set \n\
-    [ -f | --file-input ] // bashm takes the stream stdin, and writes that as content \n\
+    [ -f | --file-input ] //bashm takes the stream stdin, and writes that as content \n\
     <string>\n\
 \n\
-    If --get is used, bashm will read from the shared memory segment untin \n\
-    it hits a \\0. This behaviour can changed if an additional -l <num of bytes> is specified \n\
+    If --get is used, bashm will read from the shared memory segment until \n\
+    it hits \\0. This behaviour can be changed if an additional -l <num of bytes> option is specified \n\
 \n\
-    If --set is used, bashm will only write the parameter following \"-s\" or \"--set\" into the shm segment\n");
+    If --set is used, bashm will only write the first parameter following \"-s\" or \"--set\" into the shm segment\n");
 
 	/* If --get is used withoud any further options, bashm will read until it reaches the
 		ASCII null value. If --length <bytes> is specified additionally, only <bytes> bytes are
@@ -276,7 +276,7 @@ struct settings *parse_args(int argc, char **argv){
 		}
 	}
 
-	/* User wishes input over STDIN*/
+	/* User wishes input over STDIN */
 	if (s->file_input) {
 		s->content = read_buffered(MAX_READ_BUF, STDIN_FILENO, &(s->content_bytes));	
 		if(s->content == NULL){
