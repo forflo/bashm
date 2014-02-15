@@ -5,3 +5,10 @@ CLI described in the function usage(). SHM segments can be created, destroyed,
 read and written through statements such as --get, --destroy, --set or --create. The single segments are referenced
 via the Sys-V IPC key. As a consequence, independent bash processes will be able to use something like
 global variables that are much more flexible than e.g. fifos and much nicer than temporary files
+
+Information for Users:
+
+To actually build this package you have to run the following commands
+$ automake --add-missing #would work without, but to be sure...
+$ autoreconf
+$ ./configure --prefix=<your choice> && make && make install
