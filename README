@@ -1,1 +1,7 @@
 bashm. Use shared memory segments the shell-way!
+
+summary: This tool, called bashm, brings shared memory functionality to the shell. It has a very simple 
+CLI described in the function usage(). SHM segments can be created, destroyed, 
+read and written through statements such as --get, --destroy, --set or --create. The single segments are referenced
+via the Sys-V IPC key. As a consequence, independent bash processes will be able to use something like
+global variables that are much more flexible than e.g. fifos and much nicer than temporary files
