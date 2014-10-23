@@ -116,7 +116,6 @@ int dest(int shmid){
 		HANDLE_SHMCTL_RC
 		return -1;
 	}
-	printf("Segment with Id %d deleted!\n", shmid);
 	return 0;
 }
 
